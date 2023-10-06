@@ -11,6 +11,17 @@ const deleteBtn = document.getElementById('delete-btn')
 const dataTable = document.createElement('table')
 
 const baseUrl = 'http://localhost:4000'
+const fortunes = [
+    "A beautiful, smart, and loving person will be coming into your life.",
+    "A lifetime of happiness lies ahead of you.",
+    "A hunch is creativity trying to tell you something.",
+    "A golden egg of opportunity falls into your lap this month.",
+    "A good friendship is often more important than a passionate romance.",
+    "Adventure can be real happiness.",
+    "A feather in the hand is better than a bird in the air.",
+    "A friend is a present you give yourself.",
+    "A friend asks only for your time not your money."
+]
 
 const getCompliment = () => {
     axios.get(`${baseUrl}/api/compliment/`)
@@ -20,7 +31,15 @@ const getCompliment = () => {
     });
 };
 
-complimentBtn.addEventListener('click', getCompliment)
+function randomFortunes() {
+    let randomIndex = Math.floor(Math.random() * fortunes.length);
+    let randomFortune = fortunes[randomIndex];
+    alert(randomFortune)
+}
+
+// complimentBtn.addEventListener('click', getCompliment)
+// Try to callback call front end function
+complimentBtn.addEventListener('click', randomFortunes)
 
 // Stocks
 function getStocks() {

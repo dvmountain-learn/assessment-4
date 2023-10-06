@@ -42,22 +42,10 @@ let stockDatabase = [
 ]
 let autoId = stockDatabase.length + 1
 
-let fortunes = [
-    "A beautiful, smart, and loving person will be coming into your life.",
-    "A lifetime of happiness lies ahead of you.",
-    "A hunch is creativity trying to tell you something.",
-    "A golden egg of opportunity falls into your lap this month.",
-    "A good friendship is often more important than a passionate romance.",
-    "Adventure can be real happiness.",
-    "A feather in the hand is better than a bird in the air.",
-    "A friend is a present you give yourself.",
-    "A friend asks only for your time not your money."
-]
-
 module.exports = {
 
     getCompliment: (req, res) => {
-        const compliments = fortunes;
+        const compliments = ["Gee, you're a smart cookie!", "Cool shirt!", "Your Javascript skills are stellar."];
       
         // choose random compliment
         let randomIndex = Math.floor(Math.random() * compliments.length);
