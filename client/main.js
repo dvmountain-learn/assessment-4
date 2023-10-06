@@ -44,7 +44,7 @@ function displayStocks(stocks) {
     let html = '<table border="1"></table><thead><tr><th>#</th><th>Name</th><th style="text-align: center">Quantity</th><th style="text-align: center">Unit Price</th><th style="text-align: center">Condition</th><th style="text-align: center">Action</th></tr>'
     html += '<tbody>'
     for (let item of stocks) {
-        console.log(item)
+        // console.log(item)
         html += `<tr>
         <td>${item.id} </td>
         <td>${item.name}</td>
@@ -100,9 +100,17 @@ function clearForm() {
 saveBtn.addEventListener('click', createProductInStock)
 
 function updateProductInStock(id) {
-    let qtyObj = prompt('Enter quantity to update stock: ')
-    console.log(qtyObj)
-    axios.put(`${baseUrl}/api/stocks/${id}`, {quantity: qtyObj})
+    let updateObj = {}
+    let label = prompt('Enter label that you want to update: (eg: quantity or price)')
+    if (label === 'quantity') {
+        let qtyObj = prompt('Enter quantity to update: ')
+        updateObj = {quantity: qtyObj}
+    } else if (label === 'price') {
+        let priceObj = prompt('Enter unit price to update: ')
+        updateObj = {price: priceObj}
+    }
+    console.log(updateObj)
+    axios.put(`${baseUrl}/api/stocks/${id}`, updateObj)
         .then(res => {
             // console.log(res.data.stocks)
             let stocks = res.data.stocks

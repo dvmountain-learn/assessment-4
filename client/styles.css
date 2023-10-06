@@ -73,12 +73,13 @@ table {
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    height: 33px;
 }
 
 #edit-btn {
     width: 50px;
     height: 25px;
-    background: rgb(174, 174, 238);
+    background: rgba(165, 165, 204, 0.654);
     border: solid rgb(174, 174, 238) 0px;
     border-radius: 5px;
 }
@@ -86,7 +87,7 @@ table, th, td {
 #delete-btn {
     width: 65px;
     height: 25px;
-    background: rgb(234, 147, 150);
+    background: rgb(255, 201, 203);
     border: solid rgb(234, 174, 150) 0px;
     border-radius: 5px;
 }
