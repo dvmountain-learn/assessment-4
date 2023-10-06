@@ -127,6 +127,9 @@ function updateProductInStock(id) {
     } else if (label === 'price') {
         let priceObj = prompt('Enter unit price to update: ')
         updateObj = {price: priceObj}
+    } else {
+        alert('Invalid provide label that you want to update: ' + label)
+        return
     }
     console.log(updateObj)
     axios.put(`${baseUrl}/api/stocks/${id}`, updateObj)
